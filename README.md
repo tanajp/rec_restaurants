@@ -10,7 +10,7 @@ k-NNを使った協調フィルタリングによる飲食店レコメンドシ�
 <br>
 
 ## 開発環境
-Python 3.6.7
+Python 3.6.6
 
 <br>
 
@@ -28,7 +28,7 @@ Python 3.6.7
 | runtime.txt | 自身のPythonのバージョンを記述 |
 | requirements.txt | 必要なライブラリを記述 |
 | app.py | ソースコード |
-| Pipfile | Herokuでpythonライブラリを使う |
+| Pipfile | Herokuでscikit-learn,pandasを使う |
 | Pipfile.lock | Pipfileの記述を反映 |
 
 <br>
