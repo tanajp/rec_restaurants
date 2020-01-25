@@ -4,7 +4,8 @@
 
 ## 概要
 k-NNを使った協調フィルタリングによる飲食店レコメンドシステム。    
-好みの飲食店を入力すると、livedoorデータセットのレビューデータにおいて、入力した飲食店を高く評価しているユーザーが他に高く評価している飲食店のうちで類似度が高さTOP3の飲食店をLINE上で返してくれるBOT。
+好みの飲食店を入力すると、livedoorデータセットのレビューデータにおいて、入力した飲食店を高く評価している   
+ユーザーが他に高く評価している飲食店のうちで類似度の高さTOP3の飲食店をLINE上で返してくれるBOT。
 
 <br>
 
@@ -171,4 +172,4 @@ if __name__ == "__main__":
 <br>
 
 ##  動作イメージ
-<img src="https://user-images.githubusercontent.com/50686226/71962790-986e9800-323d-11ea-8a8a-64e123399f7e.png" width="400">
+<img src="https://user-images.githubusercontent.com/50686226/73122176-3ba50880-3fc5-11ea-9d61-d4cb57e42c05.JPG" width="400">
