@@ -1,3 +1,1 @@
-# resu
-# restaurants
-# recommend_restaurant
+# res
