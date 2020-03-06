@@ -92,9 +92,9 @@ def res_knn(text):
     distance, indice = model_knn.kneighbors(data.iloc[data.index == text].values.reshape(1, -1),n_neighbors=11)
     for i in range(0, 4):
         if  i == 0:
-            arr_an.append('{0}がお好きなのですね。\nあなたにお勧めのお店はこちらです。:   '.format(data[data.index == text].index[0]))
+            arr_inpt.append('{0}がお好きなのですね。\nあなたにお勧めのお店はこちらです。:   '.format(data[data.index == text].index[0]))
         else:
-            arr_am.append('No.{0}:{1}'.format(i,data.index[indice.flatten()[i]]))
+            arr_otpt.append('No.{0}:{1}'.format(i,data.index[indice.flatten()[i]]))
     canditate = str(arr_inpt[0]) + str(arr_otpt[0]) + "  /  " + str(arr_otpt[1]) + "  /  " + str(arr_otpt[2])
 
     return canditate
@@ -152,9 +152,9 @@ def res_knn(text):
     distance, indice = model_knn.kneighbors(data.iloc[data.index == text].values.reshape(1, -1),n_neighbors=11)
     for i in range(0, 4):
         if  i == 0:
-            arr_an.append('{0}がお好きなのですね。\nあなたにお勧めのお店はこちらです。:   '.format(data[data.index == text].index[0]))
+            arr_inpt.append('{0}がお好きなのですね。\nあなたにお勧めのお店はこちらです。:   '.format(data[data.index == text].index[0]))
         else:
-            arr_am.append('No.{0}:{1}'.format(i,data.index[indice.flatten()[i]]))
+            arr_otpt.append('No.{0}:{1}'.format(i,data.index[indice.flatten()[i]]))
     candidate = str(arr_inpt[0]) + str(arr_otpt[0]) + "  /  " + str(arr_otpt[1]) + "  /  " + str(arr_otpt[2])
 
     return candidate
