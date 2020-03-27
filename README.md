@@ -54,8 +54,8 @@ from linebot.models import (
 app = Flask(__name__)
 
 # 自身のチャネルシークレット, チャネルアクセストークン
-line_channel_secret = "ed19bc34fc7efe7eb6fa901d2b1dcc2a"
-line_channel_access_token = "rlatt0fHvQH0CC/dbisrylWc9jbNcHO1If0ZxQ8um0PlaGXLC3uhgtAuqjJ/iuDsElfJDsr1URwa625xPKwedJdzr0zhakLKd0LhE7Lu1WCfzvr+gnVaKeIsqtuTp87K1N83Qn1dnUF41K9ut5z49gdB04t89/1O/w1cDnyilFU="
+line_channel_secret = "*********************"
+line_channel_access_token = "***********************"
 
 line_bot_api = LineBotApi(line_channel_access_token)
 handler = WebhookHandler(line_channel_secret)
