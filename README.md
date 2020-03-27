@@ -143,23 +143,32 @@ Line上で返すテキストメッセージを定義する。
 
 ```python
 def res_knn(text):
-    ratings = pd.read_csv("https://raw.githubusercontent.com/tanajp/restaurants/master/restaurant.csv")
+    ratings = pd.read_csv("https://raw.githubusercontent.com/tanajp/rec_restaurants/master/restaurant.csv")
     data = ratings.pivot_table(index = 'name', columns = 'user_id', values = 'ratings').fillna(0)
     knn = NearestNeighbors(n_neighbors=9, algorithm = "brute", metric = "cosine")
     model_knn = knn.fit(data)
-    arr_inpt = []
-    arr_otpt = []
+    
+    search_word = []
+    rec_res = []
     distance, indice = model_knn.kneighbors(data.iloc[data.index == text].values.reshape(1, -1),n_neighbors=11)
     for i in range(0, 4):
         if  i == 0:
-            arr_inpt.append('{0}がお好きなのですね。\nあなたにお勧めのお店はこちらです。:   '.format(data[data.index == text].index[0]))
+            search_word.append('{0}がお好きなのですね。\nあなたにお勧めのお店はこちらです。:   '.format(data[data.index == text].index[0]))
         else:
-            arr_otpt.append('No.{0}:{1}'.format(i,data.index[indice.flatten()[i]]))
-    candidate = str(arr_inpt[0]) + str(arr_otpt[0]) + "  /  " + str(arr_otpt[1]) + "  /  " + str(arr_otpt[2])
+            rec_res.append('No.{0}:{1}'.format(i,data.index[indice.flatten()[i]]))
+    
+    url_list = []
+    for j in range(1, 4):
+        url = "https://gourmet.goo.ne.jp/restaurant/result/?kw={:s}".format(data.index[indice.flatten()[j]])
+        url_list.append(url)
 
-    return candidate
+    canditate = []
+    for k in range(3):
+        canditate.append(rec_res[k] + " / "  + "URL: " + url_list[k])
+    
+    return str(search_word[0]) + str(canditate[0]) + "  /  " + str(canditate[1]) + "  /  " + str(canditate[2])
 ```
-k近傍法を用いた協調フィルタリングによるレコメンドを行う。
+k近傍法を用いたユーザーベースの協調フィルタリングによるレコメンドを行う。
 ***
 
 ```python
@@ -172,4 +181,4 @@ if __name__ == "__main__":
 <br>
 
 ##  動作イメージ
-<img src="https://user-images.githubusercontent.com/50686226/73122176-3ba50880-3fc5-11ea-9d61-d4cb57e42c05.JPG" width="400">
+<img src="https://user-images.githubusercontent.com/50686226/77721015-f042c100-702c-11ea-8dc9-1498d4bfbde6.PNG" width="400">
