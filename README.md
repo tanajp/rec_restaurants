@@ -182,7 +182,7 @@ def res_knn(text):
     
     return str(search_word[0]) + str(canditate[0]) + "  /  " + str(canditate[1]) + "  /  " + str(canditate[2])
 ```
-k近傍法を用いたユーザーベースの協調フィルタリングによるレコメンドを行う。
+k近傍法を用いたアイテムベースの協調フィルタリングによるレコメンドを行う。
 ***
 
 ```python
