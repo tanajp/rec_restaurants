@@ -48,7 +48,7 @@ def handle_message(event):
 
     line_bot_api.reply_message(event.reply_token,TextSendMessage(text=reply_text))
 
-# kNNでアイテムベースの協調フィルタリング
+# kNNでユーザベースの協調フィルタリング
 def res_knn(text):
     ratings = pd.read_csv("https://raw.githubusercontent.com/tanajp/rec_restaurants/master/restaurant.csv")
     data = ratings.pivot_table(index = 'name', columns = 'user_id', values = 'ratings').fillna(0)
