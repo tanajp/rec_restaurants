@@ -109,8 +109,10 @@ def res_knn(text):
     canditate = []
     for k in range(3):
         canditate.append(rec_res[k] + " / "  + "URL: " + url_list[k])
+        
+    result = str(search_word[0]) + str(canditate[0]) + "  /  " + str(canditate[1]) + "  /  " + str(canditate[2])
     
-    return str(search_word[0]) + str(canditate[0]) + "  /  " + str(canditate[1]) + "  /  " + str(canditate[2])
+    return result
 
 # サーバーの立ち上げ
 if __name__ == "__main__":
@@ -179,8 +181,10 @@ def res_knn(text):
     canditate = []
     for k in range(3):
         canditate.append(rec_res[k] + " / "  + "URL: " + url_list[k])
+        
+    result = str(search_word[0]) + str(canditate[0]) + "  /  " + str(canditate[1]) + "  /  " + str(canditate[2])
     
-    return str(search_word[0]) + str(canditate[0]) + "  /  " + str(canditate[1]) + "  /  " + str(canditate[2])
+    return result
 ```
 k近傍法を用いたユーザベースの協調フィルタリングによるレコメンドを行う。
 ***
